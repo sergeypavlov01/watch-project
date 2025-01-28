@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+
+.watch-container {
+    display: flex;
+    align-items: flex-end;
+    height: 508px;
+    width: 1025px;
+}
+
+.watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 485px;
+    background-color: var(--color-dark);
+    border: 10px solid var(--color-dark-20);
+    border-radius: 20px;
+}
+
+.time {
+    display: inline-block;
+}
+
+.btn1 {
+    @include abs-position(calc((100% - 66px) - 67px), 0);
+}
+
+.btn2 {
+    @include abs-position(calc((100% - 66px) - 153px), 0)
+}
+
+.btn3 {
+    @include abs-position(calc((100% - 66px) - 239px), 0)
+}
+

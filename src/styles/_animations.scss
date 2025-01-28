@@ -1,0 +1,19 @@
+@keyframes pressing {
+    from {
+        height: 23px;
+        top: 0;
+    } to {
+        height: 14px;
+        top: 9px;
+    }
+}
+
+.btn:active {
+    animation-name: pressing;
+    animation-duration: 0.08s;
+    animation-timing-function: linear;
+}
+
+.btn2:active {
+    animation-fill-mode: forwards;
+}

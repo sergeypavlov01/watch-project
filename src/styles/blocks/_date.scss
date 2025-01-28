@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.date {
+    position: relative;
+}
+
+.date__list {
+    display: flex;
+    @include abs-position (0, 240px)    
+}
+
+.date__item {
+    font-size: 40px;
+    margin-left: 90px;
+}
+
+
+
