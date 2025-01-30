@@ -1,0 +1,15 @@
+@use '../helpers' as *;
+
+.stopwatch {
+    width: 550px;
+    position: relative;
+    text-align: center;
+}
+.stopwatch__time {
+    font-size: 200px;
+    font-weight: normal;
+}
+.stopwatch__text {
+    @include abs-position(170px, 240px);
+    font-size: 40px;
+}

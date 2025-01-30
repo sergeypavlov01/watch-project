@@ -1,3 +1,5 @@
+@use 'helpers' as *;
+
 @keyframes pressing {
     from {
         height: 23px;
@@ -8,12 +10,28 @@
     }
 }
 
-.btn:active {
-    animation-name: pressing;
-    animation-duration: 0.08s;
-    animation-timing-function: linear;
+@keyframes release {
+    from {
+        height: 14px;
+        top: 9px;
+    } to {
+        height: 23px;
+        top: 0;
+    }
 }
 
-.btn2:active {
+.btn:active:not(.btn2) {
+    @include a-press;
+}
+
+.active {
+    @include a-press;
+    animation-fill-mode: forwards;
+}
+
+.release {
+    animation-name: release;
+    animation-timing-function: linear;
+    animation-duration: 0.08s;
     animation-fill-mode: forwards;
 }

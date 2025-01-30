@@ -282,18 +282,43 @@ body {
     top: 9px;
   }
 }
-.btn:active {
+@keyframes release {
+  from {
+    height: 14px;
+    top: 9px;
+  }
+  to {
+    height: 23px;
+    top: 0;
+  }
+}
+.btn:active:not(.btn2) {
   animation-name: pressing;
   animation-duration: 0.08s;
   animation-timing-function: linear;
 }
 
-.btn2:active {
+.active {
+  animation-name: pressing;
+  animation-duration: 0.08s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.release {
+  animation-name: release;
+  animation-timing-function: linear;
+  animation-duration: 0.08s;
   animation-fill-mode: forwards;
 }
 
 .date {
   position: relative;
+}
+
+.current-date {
+  font-size: 200px;
+  font-weight: normal;
 }
 
 .date__list {
@@ -327,6 +352,8 @@ body {
 }
 
 .time {
+  font-size: 200px;
+  font-weight: normal;
   display: inline-block;
 }
 
@@ -346,6 +373,24 @@ body {
   position: absolute;
   left: calc(100% - 66px - 239px);
   top: 0;
+}
+
+.stopwatch {
+  width: 550px;
+  position: relative;
+  text-align: center;
+}
+
+.stopwatch__time {
+  font-size: 200px;
+  font-weight: normal;
+}
+
+.stopwatch__text {
+  position: absolute;
+  left: 170px;
+  top: 240px;
+  font-size: 40px;
 }
 
 /*# sourceMappingURL=main.css.map */

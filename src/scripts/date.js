@@ -1,20 +1,22 @@
-import { timeElement, timer as timerTimes } from "./time.js";
+import { timeElement, addReleaseEffect, clearTimers } from "./time.js";
+import { stopwatchElement } from "./stopwatch.js";
 
-// Function removing all unnecessary timers
-function clearTimers() {
-    clearInterval(timerTimes);
-}
+const currentDateElement = document.querySelector('.current-date');
+const btnElement = document.getElementById("btn1");
+const dateElement = document.querySelector(".date");
+
+let timersDate = []
 
 // Show the present date;
-const currentDateElement = document.querySelector('.current-date');
 
 const showDate = () => {
-    return setInterval(() => {
+    const timer = setInterval(() => {
         const date = new Date();
 
         const day = date.getDate();
         const month = date.getMonth() + 1;
-        const year = `${date.getFullYear()}`
+        const year = 
+        `${date.getFullYear()}`
         .split("")
         .splice(2, 2)
         .join("");
@@ -23,22 +25,21 @@ const showDate = () => {
 
         currentDateElement.textContent = `${year} ${month} ${day}`;
     }, 1000);
+
+    timersDate.push(timer)
 };
 
-const timer = showDate()
-
 // Event click
-const btnElement = document.getElementById("btn1");
-const dateElement = document.querySelector(".date");
-
 btnElement.addEventListener("click", () => {
     clearTimers()
     dateElement.classList.remove("hidden");
     timeElement.classList.add("hidden");
+    stopwatchElement.classList.add("hidden");
+    addReleaseEffect();
     showDate();
 });
 
-export { dateElement, timer }
+export { dateElement, timersDate }
 
 
 
